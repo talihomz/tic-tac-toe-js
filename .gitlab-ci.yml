@@ -1,0 +1,16 @@
+build:
+  image: registry.gitlab.com/wahomekevin/web-starter:latest
+  stage: build
+  artifacts:
+    paths: 
+      - ./public/
+  script:
+    - sh $APP_PATH/run.sh
+   
+deploy:
+  image: registry.gitlab.com/wahomekevin/website-deploy:latest
+  stage: deploy
+  dependencies:
+    - build
+  script:
+    - sh $APP_PATH/sync.sh

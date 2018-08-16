@@ -1,0 +1,19 @@
+# Library Project
+
+An implementation on the [Library Project](https://www.theodinproject.com/courses/javascript/lessons/library) of The Odin Project.
+
+# Live Preview, with Docker
+
+You will need a GitLab account to run this with Docker.
+
+## Log in to GitLab's Docker Registry
+
+Log in to the Registry using the following command:
+
+`$ docker login registry.gitlab.com`
+
+## Serve the site
+
+Run  `docker-compose up`.
+
+If all goes well, you should see it live [here](http://localhost:3000).

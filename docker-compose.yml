@@ -1,0 +1,12 @@
+version: '2'
+services:
+ web:
+  #  image: registry.gitlab.com/wahomekevin/web-starter:latest
+   image: test
+   container_name: tictactoe
+   command: npm run dev
+   ports:
+    - "3000:3000"
+   volumes:
+    - ./src:/app/src
+    - ./public:/app/public    # Uncomment this to see the build folder output.
