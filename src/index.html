@@ -6,52 +6,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>TicTacToe</title>
+
+  <!-- Raleway Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,700" rel="stylesheet">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
 </head>
 
-<body class="container">
-  <section class="content">
-    <h1>TicTacToe</h1>
-    <span>by
-      <em>Wahome Kevin</em>
-    </span>
+<body>
+  <!-- The header section -->
+  <header>
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <h1>TicTacToe Game</h1>
+          <span>by Wahome Kevin</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-8">
+
+          <section id="controls">
+            <div class="row">
+              <div class="col-xs-4 col-xs-offset-2">
+                <button class="btn btn-lg">Start</button>
+              </div>
+              <div class="col-xs-4">
+                <button class="btn btn-lg">Reset</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- The game playing area -->
+          <section id="game">
+            <div class="row">
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+              <div class="col-xs-4">
+                x
+              </div>
+            </div>
+          </section>
+
+          <!-- The scoreboard -->
+          <section id="scoreboard">
+            <div class="row">
+              <div class="col-xs-4">
+                <h3>Player 1</h3>
+                <span>0</span>
+              </div>
+              <div class="col-xs-4">
+                <h3>Draw</h3>
+                <span>0</span>
+              </div>
+              <div class="col-xs-4">
+                <h3>Player 2</h3>
+                <span>0</span>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="col-lg-4 right-bar">
+
+          <!-- Game info section -->
+          <section id="info">
+            <h2>About Game</h2>
+            <blockquote>
+              Tic-tac-toe is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a
+              3×3 grid.
+              <br />
+              <br />
+              The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins
+              the game.
+              <br />
+              <br />
+              <cite>&mdash; Wikipedia</cite>
+            </blockquote>
+          </section>
+
+          <br />
+
+        </div>
+      </div>
+    </div>
   </section>
-  <section class="stats">
-    <div class="info">
-      <h2>0</h2>
-      <span>Player 1</span>
-      <span>(X)</span>
-    </div>
-    <div class="info">
-      <h2>0</h2>
-      <span>Tie</span>
-    </div>
-    <div class="info">
-      <h2>0</h2>
-      <span>Player 2</span>
-      <span>(O)</span>
-    </div>
-  </section>
-  <section class="controls">
-    <button>Start</button>
-    <button class="reset">Reset</button>
-  </section>
-  <section class="board">
-    <div class="row">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-    <div class="row">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-    <div class="row">
-      <div class="slot"></div>
-      <div class="slot"></div>
-      <div class="slot"></div>
-    </div>
-  </section>
+
 </body>
 
 </html>
