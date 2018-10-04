@@ -18,10 +18,10 @@
 <body>
   <!-- The header section -->
   <header>
-    <div class="jumbotron">
+    <div class="nav navbar-inverse">
       <div class="container">
         <div class="row">
-          <h1>TicTacToe Game</h1>
+          <h1>TicTacToe</h1>
           <span>by Wahome Kevin</span>
         </div>
       </div>
@@ -32,21 +32,28 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-lg-8">
+        <div class="col-lg-8 main">
 
-          <section id="controls">
+          <!-- The scoreboard -->
+          <section class="scoreboard">
             <div class="row">
-              <div class="col-xs-4 col-xs-offset-2">
-                <button class="btn btn-lg">Start</button>
+              <div class="col-xs-4">
+                <h3>Player 1</h3>
+                <h1>0</h1>
               </div>
               <div class="col-xs-4">
-                <button class="btn btn-lg">Reset</button>
+                <h3>Draw</h3>
+                <h1>0</h1>
+              </div>
+              <div class="col-xs-4">
+                <h3>Player 2</h3>
+                <h1>0</h1>
               </div>
             </div>
           </section>
 
           <!-- The game playing area -->
-          <section id="game">
+          <section class="board">
             <div class="row">
               <div class="col-xs-4">
                 x
@@ -78,24 +85,6 @@
               </div>
               <div class="col-xs-4">
                 x
-              </div>
-            </div>
-          </section>
-
-          <!-- The scoreboard -->
-          <section id="scoreboard">
-            <div class="row">
-              <div class="col-xs-4">
-                <h3>Player 1</h3>
-                <span>0</span>
-              </div>
-              <div class="col-xs-4">
-                <h3>Draw</h3>
-                <span>0</span>
-              </div>
-              <div class="col-xs-4">
-                <h3>Player 2</h3>
-                <span>0</span>
               </div>
             </div>
           </section>
@@ -118,6 +107,21 @@
               <br />
               <cite>&mdash; Wikipedia</cite>
             </blockquote>
+          </section>
+
+          <hr />
+
+          <section class="controls">
+            <div class="row">
+              <div class="col-xs-9 col-xs-offset-2">
+                <button class="btn btn-lg btn-outline-success">Start</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-9 col-xs-offset-2">
+                <button class="btn btn-lg btn-outline-danger">Reset</button>
+              </div>
+            </div>
           </section>
 
           <br />
