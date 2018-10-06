@@ -2,6 +2,7 @@ const display = require('./displayController');
 const gameBoard = require('../lib/board');
 const Player = require('../lib/player');
 const players = {};
+let currentMove = 1;
 
 module.exports = {
   gameMode: 0,
@@ -28,6 +29,12 @@ module.exports = {
     display.render(gameBoard.data);
 
     this.gameMode = 1;
+    currentMove = 1;
+  },
+  playSlot: function(slot) {
+    gameBoard.markSlot(slot, currentMove);
+    display.render(gameBoard.data);
+    currentMove = currentMove === 1 ? 2 : 1;
   },
   start: function() {
     this.gameMode = 0;

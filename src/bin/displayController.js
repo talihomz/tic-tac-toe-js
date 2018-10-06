@@ -51,7 +51,10 @@ module.exports = {
     cells.forEach((cell) => {
 
       cell.addEventListener('click', () => {
-        this.onMove(cell.getAttribute("data-box"));
+
+        // only during gameplay
+        if(gameInstance.gameMode === 0)
+          this.onSlotClicked(cell.getAttribute("data-box"));
       });
     });
 
@@ -81,9 +84,10 @@ module.exports = {
 
     resets++;
   },
-  onMove: function (cellNumber) {
-
-    console.log(`Click on cell ${cellNumber}`);
+  onSlotClicked: function (cellNumber) {
+    console.log(cellNumber);
+    
+    gameInstance.playSlot(cellNumber);
   },
   onChangePlayerName: function (playerId) {
     let newName = prompt('Enter your new name.', `Player ${playerId}`);
@@ -110,7 +114,7 @@ module.exports = {
           mark = 'O';
           break;
         default:
-          mark = '-';
+          mark = '_';
       }
       cells[index].innerHTML = mark;
 
