@@ -38,11 +38,11 @@
           <section class="scoreboard">
             <div class="row">
               <div class="col-xs-6">
-                <h3>Player 1</h3>
+                <h3 data-player="1" class="edit">Player 1</h3>
                 <h1>X</h1>
               </div>
               <div class="col-xs-6">
-                <h3>Player 2</h3>
+                <h3 data-player="2" class="edit">Player 2</h3>
                 <h1>O</h1>
               </div>
             </div>
@@ -89,6 +89,24 @@
 
         <div class="col-lg-4 right-bar">
 
+          <hr />
+
+          <section class="controls">
+            <div class="row">
+              <div class="col-xs-9 col-xs-offset-2">
+                <button id="start-button" class="btn btn-lg btn-outline-success">Start</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-9 col-xs-offset-2">
+                <button id="reset-button" class="btn btn-lg btn-outline-danger hidden">Reset</button>
+              </div>
+            </div>
+          </section>
+
+          <hr />
+          <hr />
+
           <!-- Game info section -->
           <section id="info">
             <h2>About Game</h2>
@@ -104,22 +122,6 @@
               <cite>&mdash; Wikipedia</cite>
             </blockquote>
           </section>
-
-          <hr />
-
-          <section class="controls">
-            <div class="row">
-              <div class="col-xs-9 col-xs-offset-2">
-                <button id="start-button" class="btn btn-lg btn-outline-success">Start</button>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-9 col-xs-offset-2">
-                <button id="reset-button" class="btn btn-lg btn-outline-danger">Reset</button>
-              </div>
-            </div>
-          </section>
-
           <br />
 
         </div>

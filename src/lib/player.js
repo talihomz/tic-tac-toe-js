@@ -1,3 +1,5 @@
-module.exports = function(name){
-  this.name = name;
-}
+const playerFactory = (id, name) => {
+  return { id, name };
+};
+
+module.exports = playerFactory;
