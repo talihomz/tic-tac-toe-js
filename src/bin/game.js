@@ -2,7 +2,7 @@ const display = require('./displayController');
 const gameBoard = require('../lib/board');
 const Player = require('../lib/player');
 const players = {};
-let currentMove = 1;
+let currentPlayer = 1;
 
 module.exports = {
   gameMode: 0,
@@ -29,15 +29,18 @@ module.exports = {
     display.render(gameBoard.data);
 
     this.gameMode = 1;
-    currentMove = 1;
+    currentPlayer = 1;    
+    display.resetPlayerNames();
   },
   playSlot: function(slot) {
-    gameBoard.markSlot(slot, currentMove);
+    gameBoard.markSlot(slot, currentPlayer);
     display.render(gameBoard.data);
-    currentMove = currentMove === 1 ? 2 : 1;
+    currentPlayer = currentPlayer === 1 ? 2 : 1;
+    display.switchActivePlayer(currentPlayer);    
   },
   start: function() {
     this.gameMode = 0;
+    display.switchActivePlayer(currentPlayer);
   },
   setPlayerName: function(playerId, playerName){
     players[playerId].name = playerName;

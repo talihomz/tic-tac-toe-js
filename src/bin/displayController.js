@@ -78,6 +78,7 @@ module.exports = {
     gameInstance.start();
   },
   onReset: function () {
+    // first reset starts the game
     if (resets > 0) {
       gameInstance.reset();
     }
@@ -85,8 +86,6 @@ module.exports = {
     resets++;
   },
   onSlotClicked: function (cellNumber) {
-    console.log(cellNumber);
-    
     gameInstance.playSlot(cellNumber);
   },
   onChangePlayerName: function (playerId) {
@@ -114,7 +113,7 @@ module.exports = {
           mark = 'O';
           break;
         default:
-          mark = '_';
+          mark = '';
       }
       cells[index].innerHTML = mark;
 
@@ -127,8 +126,23 @@ module.exports = {
 
     });
   },
+  resetPlayerNames: function() {
+    [1,2].forEach( index => {
+      playerNames[index - 1].classList.remove('active');
+    }); 
+  },
   showPlayer: function (player) {
-    let playerName = document.querySelector(`h3[data-player="${player.id}"]`);
+    let playerName = document.querySelector(`h2[data-player="${player.id}"]`);
     playerName.innerHTML = player.name;
+  },
+  switchActivePlayer: function(activePlayer) {
+    playerNames[activePlayer - 1].classList.add('active');
+    playerNames[2 - activePlayer].classList.remove('active');
+
+    // change board's hover
+    cells.forEach( cell => {
+      cell.classList.add( activePlayer === 1 ? 'x' : 'o' );
+      cell.classList.remove( activePlayer === 1 ? 'o' : 'x' );
+    });
   }
 };

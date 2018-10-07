@@ -15,13 +15,26 @@ body {
 
     .scoreboard {
         padding: 8px 32px;
+        color: grey;
 
         .edit[data-player] {
+            font-size: 3em;
+            color: darkgray;
+
             &:before {
                 content: "✎";
                 cursor: pointer;
                 margin-right: 8px;
             }
+
+            & + h1 {
+                display: none;
+            }
+        }
+
+        .active {
+            font-weight: bold;
+            font-size: 36px;
         }
     }
 
@@ -33,23 +46,44 @@ body {
         .row {
             margin: 0;
 
-            div[data-box] {
-                padding: 16px 0;
-                font-size: 7em;
-                color: white;
-                cursor: pointer;
-
-                &:nth-child(1), &:nth-child(2) {
-                    border-right: solid 1px grey;
-                }
-            }
-
-            .moved[data-box] {
-              color: black;
-            }
-
             &:nth-child(1), &:nth-child(2) {
                 border-bottom: solid 1px grey;
+            }
+        }
+
+        div[data-box].moved[data-box] {
+            color: grey;
+            &:before {
+                content: none;
+            }
+        }
+
+        div[data-box] {
+            padding: 16px 0;
+            font-size: 7em;
+            color: white;
+            cursor: pointer;
+
+            &:nth-child(1), &:nth-child(2) {
+                border-right: solid 1px grey;
+            }
+        }
+
+        div[data-box].x {
+            &:before {
+                content: 'x';
+            }
+        }
+
+        div[data-box].o {
+            &:before {
+                content: 'o';
+            }
+        }
+
+        div[data-box].o, div[data-box].x {
+            &:hover {
+                background: whitesmoke;
             }
         }
     }
