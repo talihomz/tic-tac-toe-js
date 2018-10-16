@@ -2,8 +2,8 @@ const cells = document.querySelectorAll('div[data-box]');
 const playerNames = document.querySelectorAll('.edit[data-player]');
 const startButton = document.getElementById('start-button');
 const resetButton = document.getElementById('reset-button');
+
 let gameInstance;
-let resets = 0;
 
 module.exports = {
 
@@ -20,7 +20,7 @@ module.exports = {
       resetButton.classList.remove('hidden');
 
       // disable edit on player name
-      playerNames.forEach(nameElement => {
+      playerNames.forEach( nameElement => {
         nameElement.classList.remove('edit');
       });
 
@@ -35,16 +35,7 @@ module.exports = {
       if (confirmation === false)
         return;
 
-      // change ui
-      startButton.classList.remove('hidden');
-      resetButton.classList.add('hidden');
-
-      // enable edit on player name
-      playerNames.forEach(nameElement => {
-        nameElement.classList.add('edit');
-      });
-
-      this.onReset();
+      this.reset();
     });
 
     // handle cell click
@@ -70,20 +61,11 @@ module.exports = {
       });
     });
 
-
     // start with a reset state
-    this.onReset();
+    this.reset();
   },
   onStart: function () {
     gameInstance.start();
-  },
-  onReset: function () {
-    // first reset starts the game
-    if (resets > 0) {
-      gameInstance.reset();
-    }
-
-    resets++;
   },
   onSlotClicked: function (cellNumber) {
     gameInstance.playSlot(cellNumber);
@@ -126,10 +108,37 @@ module.exports = {
 
     });
   },
-  resetPlayerNames: function() {
+  renderWin: function(combination, player) {
+
+    // display the winning combination
+    combination.forEach( cell => {
+      document.querySelector(`[data-box="${cell + 1}"]`).classList.add('win');
+    });
+
+    // show user a winning message
+    setTimeout(() => {
+      alert(`${player} won the game!`);
+      gameInstance.reset();
+    }, 250);
+
+  },
+  reset: function() {
+    
+    // reset names
     [1,2].forEach( index => {
       playerNames[index - 1].classList.remove('active');
-    }); 
+      nameElement.classList.add('edit');
+    });
+
+    // reset cells
+    cells.forEach( cell => {
+      cell.classList.remove('win');
+    });
+
+    // reset buttons
+    startButton.classList.remove('hidden');
+    resetButton.classList.add('hidden');
+
   },
   showPlayer: function (player) {
     let playerName = document.querySelector(`h2[data-player="${player.id}"]`);

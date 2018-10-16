@@ -51,10 +51,17 @@ body {
             }
         }
 
-        div[data-box].moved[data-box] {
-            color: grey;
+        .moved {
+            color: grey !important;
             &:before {
-                content: none;
+                content: none !important;
+            }
+        }
+
+        .moved.win {
+            color: green !important;
+            &:before {
+                content: none !important;
             }
         }
 
