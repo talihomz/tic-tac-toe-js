@@ -56,7 +56,7 @@ module.exports = {
     let combination = checkWin();
 
     if (combination > -1) {
-      display.renderWin(winningCombinations[combination]);
+      display.renderWin(winningCombinations[combination], players[currentPlayer].name);
     } else {
       currentPlayer = currentPlayer === 1 ? 2 : 1;
       display.switchActivePlayer(currentPlayer);
