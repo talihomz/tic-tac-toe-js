@@ -1,8 +1,7 @@
 version: '2'
 services:
  web:
-  #  image: registry.gitlab.com/wahomekevin/web-starter:latest
-   image: test
+   image: registry.gitlab.com/wahomekevin/web-starter:latest
    container_name: tictactoe
    command: npm run dev
    ports:
