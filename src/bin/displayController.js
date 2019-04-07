@@ -127,7 +127,7 @@ module.exports = {
     // reset names
     [1,2].forEach( index => {
       playerNames[index - 1].classList.remove('active');
-      nameElement.classList.add('edit');
+      playerNames[index - 1].classList.add('edit');
     });
 
     // reset cells

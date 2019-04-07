@@ -1,6 +1,6 @@
 # TicTacToe Project
 
-An implementation on the [TictacToe Project](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript) of The Odin Project.
+An implementation on the [Tic Tac Toe Project](https://www.theodinproject.com/courses/javascript/lessons/tic-tac-toe-javascript) of The Odin Project.
 
 # Live Preview, with Docker
 
